@@ -30,5 +30,12 @@
   <a href="#memo-license">License</a>
 </p>
 
+## :rocket: Tecnologias
+
+Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocketseat.com.br/ignite) da Rocketseat 
+
+- [ReactJS](https://reactjs.org/)
+- [VSCode](https://code.visualstudio.com/)
+
 ## :memo: License
 This project is under the MIT license. See the [LICENSE](https://github.com/felipesanderp/dtmoney/blob/master/LICENSE) for more information.
