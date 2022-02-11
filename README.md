@@ -26,7 +26,7 @@
 
 <p align="center">
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-como-usar">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
@@ -42,5 +42,28 @@ Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocke
 - [polished-js](https://polished.js.org/)
 - [VSCode](https://code.visualstudio.com/)
 
+## :information_source: Como usar
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/)
+
+```bash
+# Clone this repository
+$ git clone https://github.com/felipesanderp/dtmoney
+
+# Go into the repository
+$ cd dtmoney
+
+# Install dependencies
+$ yarn
+
+# Start the frontend development server on port 3000
+$ yarn start
+```
+
 ## :memo: License
 This project is under the MIT license. See the [LICENSE](https://github.com/felipesanderp/dtmoney/blob/master/LICENSE) for more information.
+
+---
+
+Made with ♥ by Felipe Sander :wave: [Get in touch!](https://www.linkedin.com/in/felipesander)
