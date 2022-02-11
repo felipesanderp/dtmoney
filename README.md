@@ -25,16 +25,21 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-use">Como Usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
 </p>
 
 ## :rocket: Tecnologias
 
-Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocketseat.com.br/ignite) da Rocketseat 
+Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocketseat.com.br/ignite) da Rocketseat, com as seguintes tecnologias:
 
 - [ReactJS](https://reactjs.org/)
+- [mirajejs](https://miragejs.com/)
+- [react-modal](https://github.com/reactjs/react-modal)
+- [axios](https://github.com/axios/axios)
+- [styled-components](https://styled-components.com/)
+- [polished-js](https://polished.js.org/)
 - [VSCode](https://code.visualstudio.com/)
 
 ## :memo: License
