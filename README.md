@@ -49,7 +49,7 @@ Além disto é bom ter um editor para trabalhar com o código, como [VSCode](htt
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/felipesanderp/dtmoney
+$ git clone https://github.com/felipesanderp/dtmoney.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd dtmoney
