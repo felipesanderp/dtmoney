@@ -13,11 +13,11 @@
    </a>
   
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/felipesanderp/dtmoney.svg">
-  <a href="https://github.com/felipesanderp/ecoleta/commits/master">
+  <a href="https://github.com/felipesanderp/dtmoney/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/felipesanderp/dtmoney.svg">
   </a>
 
-  <a href="https://github.com/felipesanderp/ecoleta/issues">
+  <a href="https://github.com/felipesanderp/dtmoney/issues">
     <img alt="Repository issues" src="https://img.shields.io/github/issues/felipesanderp/dtmoney.svg">
   </a>
 
