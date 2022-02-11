@@ -21,5 +21,5 @@
     <img alt="Repository issues" src="https://img.shields.io/github/issues/felipesanderp/dtmoney.svg">
   </a>
 
-  <img alt="GitHub" src="https://img.shields.io/github/license/felipesanderp/dtmoney">
+  
 </p>
