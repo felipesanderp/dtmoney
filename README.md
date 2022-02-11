@@ -4,6 +4,10 @@
 </h1>
 
 <p align="center">
+  <img src="/src/assets/dtmoney-gif.gif" alt="animated" />
+</p>  
+
+<p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/felipesanderp/dtmoney.svg">
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/felipesanderp/dtmoney.svg">
