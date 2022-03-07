@@ -13,6 +13,29 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  .header-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    nav {
+      margin-left: 2rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.2s;
+        & + a {
+          margin-left: 32px;
+        }
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+
   button {
     font-size: 1rem;
     color: #fff;
