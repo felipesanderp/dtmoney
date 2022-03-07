@@ -34,7 +34,7 @@ export function Upload({ onUpload }: UploadProps) {
             isDragActive={isDragActive}
             isDragReject={isDragReject}
           >
-            <input {...getInputProps()} data-testid="upload" />
+            <input {...getInputProps()}/>
             {renderDragMessage(isDragActive, isDragReject)}
           </DropContainer>
         )}

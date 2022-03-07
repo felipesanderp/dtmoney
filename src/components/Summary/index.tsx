@@ -5,23 +5,24 @@ import outcomeImg from '../../assets/outcome.svg'
 import totalImg from '../../assets/total.svg'
 
 import { Container } from "./styles";
+import formatValue from '../../utils/formatValue';
 
 export function Summary() {
   const { transactions } = useTransactions();
 
   const summary = transactions.reduce((acc, transaction) => {
-    if (transaction.type === 'deposit') {
-      acc.deposits += transaction.amount;
-      acc.total += transaction.amount;
+    if (transaction.type === 'income') {
+      acc.incomes += Number(transaction.value);
+      acc.total += Number(transaction.value);
     } else {
-      acc.withdraws += transaction.amount;
-      acc.total -= transaction.amount;
+      acc.outcomes += Number(transaction.value);
+      acc.total -= Number(transaction.value);
     }
 
     return acc;
   }, {
-    deposits: 0,
-    withdraws: 0,
+    incomes: 0,
+    outcomes: 0,
     total: 0
   })
 
@@ -33,10 +34,7 @@ export function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          {new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-          }).format(summary.deposits)}
+          {formatValue(summary.incomes)}
         </strong>
       </div>
       <div>
@@ -44,11 +42,8 @@ export function Summary() {
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong className="withdraw">- 
-          {new Intl.NumberFormat('pt-BR', {
-              style: 'currency',
-              currency: 'BRL',
-          }).format(summary.withdraws)}
+        <strong className="withdraw">
+          {formatValue(summary.outcomes)}
         </strong>
       </div>
       <div className="highlight-background">
@@ -57,10 +52,7 @@ export function Summary() {
           <img src={totalImg} alt="Total" />
         </header>
         <strong>
-          {new Intl.NumberFormat('pt-BR', {
-              style: 'currency',
-              currency: 'BRL',
-          }).format(summary.total)}
+          {formatValue(summary.total)}
         </strong>
       </div>
     </Container>

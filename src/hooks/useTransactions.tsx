@@ -4,10 +4,10 @@ import { api } from '../services/api';
 interface Transaction {
   id: number;
   title: string;
-  amount: number;
+  value: number;
   type: string;
   category: string;
-  createdAt: string;
+  created_at: Date;
 }
 
 type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>;
@@ -30,13 +30,12 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
 
   useEffect(() => {
     api.get('transactions')
-    .then(response => setTransactions(response.data.transactions))
+    .then(response => setTransactions(response.data))
   }, []);
 
   async function createTransaction(transactionInput: TransactionInput) {
     const response = await api.post('/transactions', {
-      ...transactionInput,
-      createdAt: new Date(),
+      ...transactionInput
     });
 
     const { transaction } = response.data;

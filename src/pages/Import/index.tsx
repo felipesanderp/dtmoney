@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import filesize from 'filesize';
+import { useNavigate } from 'react-router-dom';
 
 import { Upload } from '../../components/Upload';
 import { api } from '../../services/api';
@@ -15,6 +16,8 @@ interface FileProps {
 }
 
 export function Import() {
+  const history =useNavigate();
+
   const [uploadedFiles, setUploadedFiles] = useState<FileProps[]>([]);
 
   async function handleUpload(): Promise<void> {
@@ -29,6 +32,8 @@ export function Import() {
     try {
       await api.post('/transactions/import', data);
 
+      history('/');
+
     } catch (err: any) {
       console.log(err.response.error);
     }
@@ -42,6 +47,7 @@ export function Import() {
     }));
 
     setUploadedFiles(uploadFiles);
+
   }
   return (
     <Container>
