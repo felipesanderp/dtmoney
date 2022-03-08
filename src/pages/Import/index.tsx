@@ -3,6 +3,7 @@ import filesize from 'filesize';
 import { useNavigate } from 'react-router-dom';
 
 import { Upload } from '../../components/Upload';
+import { FileList } from '../../components/FileList';
 import { api } from '../../services/api';
 
 import alert from '../../assets/alert.svg';
@@ -54,6 +55,7 @@ export function Import() {
         <Title>Importar uma transação</Title>
         <ImportFileContainer>
           <Upload onUpload={submitFile} />
+           {!!uploadedFiles.length && <FileList files={uploadedFiles} />}
 
           <Footer>
             <p>
