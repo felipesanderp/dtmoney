@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import logoImg from "../../assets/logo.svg"
 
 import { Container, Content } from './styles'
@@ -14,8 +14,8 @@ export function Header({ onOpenNewTransactionModal }: HeaderProps) {
         <div className="header-items">
           <img src={logoImg} alt="dt money" />
           <nav>
-            <Link to="/">Listagem</Link>
-            <Link to="/import">Importar</Link>
+            <NavLink to="/">Listagem</NavLink>
+            <NavLink to="/import">Importar</NavLink>
           </nav>
         </div>
         <button type="button" onClick={onOpenNewTransactionModal}>

@@ -1,4 +1,4 @@
-import { useTransactions } from '../../hooks/useTransactions';
+import { Transaction, useTransactions } from '../../hooks/useTransactions';
 import formatValue from '../../utils/formatValue';
 
 import { Container } from "./styles";
@@ -19,7 +19,7 @@ export function TransactionsTable() {
         </thead>
 
         <tbody>
-          {transactions.map(transaction => (
+          {transactions.map((transaction: Transaction) => (
             <tr key={transaction.id}>
               <td>{transaction.title}</td>
               <td className={transaction.type}>

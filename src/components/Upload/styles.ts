@@ -9,11 +9,11 @@ interface UploadProps {
 }
 
 const dragActive = css`
-  border-color: #12a454;
+  border-color: var(--green);
 `;
 
 const dragReject = css`
-  border-color: #e83f5b;
+  border-color: var(--red);
 `;
 
 export const DropContainer = styled.div.attrs({
@@ -30,9 +30,9 @@ export const DropContainer = styled.div.attrs({
 `;
 
 const messageColors = {
-  default: '#5636D3',
-  error: '#e83f5b',
-  success: '#12a454',
+  default: 'var(--blue-light)',
+  error: 'var(--red)',
+  success: 'var(--green)',
 };
 
 export const UploadMessage = styled.p`

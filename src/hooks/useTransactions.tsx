@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import { api } from '../services/api';
 
-interface Transaction {
-  id: number;
+export interface Transaction {
+  id: string;
   title: string;
   value: number;
   type: string;

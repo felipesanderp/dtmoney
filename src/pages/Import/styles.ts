@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
@@ -38,15 +37,20 @@ export const Footer = styled.section`
       margin-right: 5px;
     }
   }
+
   button {
-    background: #ff872c;
+    font-size: 1rem;
+    background: var(--blue-light);
     color: #fff;
-    border-radius: 5px;
-    padding: 15px 80px;
     border: 0;
+    padding: 0 5rem;
+    border-radius: 0.25rem;
+    height: 3rem;
+
     transition: background-color 0.2s;
+
     &:hover {
-      background: ${shade(0.2, '#ff872c')};
+      filter: brightness(0.9);
     }
   }
 `;
