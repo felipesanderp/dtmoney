@@ -38,7 +38,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
       ...transactionInput
     });
 
-    const { transaction } = response.data;
+    const transaction = response.data;
 
     setTransactions([
       ...transactions,
