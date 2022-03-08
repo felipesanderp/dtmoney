@@ -31,7 +31,7 @@ export function TransactionsProvider({ children }: TransactionProviderProps) {
   useEffect(() => {
     api.get('transactions')
     .then(response => setTransactions(response.data))
-  }, []);
+  }, [transactions]);
 
   async function createTransaction(transactionInput: TransactionInput) {
     const response = await api.post('/transactions', {
