@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import Modal from 'react-modal'
+import { ToastContainer } from 'react-toastify';
 
 import { AppProvider } from "./hooks";
 
@@ -17,6 +18,7 @@ export function App() {
 
 				<GlobalStyle />
 			</AppProvider>
+			<ToastContainer autoClose={3000} />
 		</BrowserRouter>
 	);
 }

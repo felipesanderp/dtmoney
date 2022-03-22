@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 import { Input } from '../../components/Input';
 import { useAuth } from '../../hooks/useAuth';
@@ -22,8 +23,8 @@ export function SignIn() {
       });
 
       history("/dashboard")
-    } catch (err) {
-      alert(err);
+    } catch {
+      toast.error("E-mail ou senha incorretos!");
     }
   }
 
