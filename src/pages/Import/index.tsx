@@ -9,7 +9,7 @@ import { api } from '../../services/api';
 import alert from '../../assets/alert.svg';
 
 import { Container, Title, ImportFileContainer, Footer } from './styles';
-
+import { Header } from '../../components/Header';
 interface FileProps {
   file: File;
   name: string;
@@ -51,7 +51,10 @@ export function Import() {
 
   }
   return (
-    <Container>
+    <>
+      <Header />
+
+      <Container>
         <Title>Importar uma transação</Title>
         <ImportFileContainer>
           <Upload onUpload={submitFile} />
@@ -68,5 +71,7 @@ export function Import() {
           </Footer>
         </ImportFileContainer>
       </Container>
+    </>
+   
   )
 }
