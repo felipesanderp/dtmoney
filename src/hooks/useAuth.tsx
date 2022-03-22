@@ -23,7 +23,7 @@ interface SignInCredentials {
 interface AuthContextData {
   user: User;
   signIn(credentials: SignInCredentials): Promise<void>;
-  // signOut(): void;
+  signOut(): void;
   // updateUser(user: User): void;
 }
 
@@ -59,8 +59,15 @@ function AuthProvider({ children }: AuthProps) {
     setData({ token, user });
   }, []);
 
+  const signOut = useCallback(() => {
+    localStorage.removeItem('@FinApi:token');
+    localStorage.removeItem('@FinApi:user');
+
+    setData({} as AuthState);
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn }}>
+    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   )
