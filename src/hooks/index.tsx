@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { AuthProvider } from './useAuth';
-import { TransactionsProvider } from './useTransactions';
+import { StatementProvider } from './useStatements';
 
 interface AppProviderProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface AppProviderProps {
 export function AppProvider({ children }: AppProviderProps) {
   return (
     <AuthProvider>
-      <TransactionsProvider>{children}</TransactionsProvider>
+      <StatementProvider>{children}</StatementProvider>
     </AuthProvider>
   )
 };

@@ -1,4 +1,4 @@
-import { useTransactions } from '../../hooks/useTransactions';
+//import { useTransactions } from '../../hooks/useTransactions';
 
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
@@ -8,23 +8,23 @@ import { Container } from "./styles";
 import formatValue from '../../utils/formatValue';
 
 export function Summary() {
-  const { transactions } = useTransactions();
+  //const { transactions } = useTransactions();
 
-  const summary = transactions.reduce((acc, transaction) => {
-    if (transaction.type === 'income') {
-      acc.incomes += Number(transaction.value);
-      acc.total += Number(transaction.value);
-    } else {
-      acc.outcomes += Number(transaction.value);
-      acc.total -= Number(transaction.value);
-    }
+  // const summary = transactions.reduce((acc, transaction) => {
+  //   if (transaction.type === 'income') {
+  //     acc.incomes += Number(transaction.value);
+  //     acc.total += Number(transaction.value);
+  //   } else {
+  //     acc.outcomes += Number(transaction.value);
+  //     acc.total -= Number(transaction.value);
+  //   }
 
-    return acc;
-  }, {
-    incomes: 0,
-    outcomes: 0,
-    total: 0
-  })
+  //   return acc;
+  // }, {
+  //   incomes: 0,
+  //   outcomes: 0,
+  //   total: 0
+  // })
 
   return (
     <Container>
@@ -34,7 +34,7 @@ export function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          {formatValue(summary.incomes)}
+          0
         </strong>
       </div>
       <div>
@@ -43,7 +43,7 @@ export function Summary() {
           <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong className="withdraw">
-          {formatValue(summary.outcomes)}
+          0
         </strong>
       </div>
       <div className="highlight-background">
@@ -52,7 +52,7 @@ export function Summary() {
           <img src={totalImg} alt="Total" />
         </header>
         <strong>
-          {formatValue(summary.total)}
+          0
         </strong>
       </div>
     </Container>

@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import Modal from 'react-modal'
-import { useTransactions } from '../../hooks/useTransactions';
+//import { useTransactions } from '../../hooks/useTransactions';
 
 import closeImg from '../../assets/close.svg';
 import incomeImg from '../../assets/income.svg';
@@ -13,30 +13,30 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
-  const { createTransaction } = useTransactions();
+  //const { createTransaction } = useTransactions();
 
   const [title, setTitle] = useState('');
   const [value, setValue] = useState(0);
   const [category, setCategory] = useState('');
   const [type, setType] = useState('income');
 
-  async function handleCreateNewTransaction(event: FormEvent) {
-    event.preventDefault();
+  // async function handleCreateNewTransaction(event: FormEvent) {
+  //   event.preventDefault();
 
-    await createTransaction({
-      title,
-      value,
-      category,
-      type,
-      created_at: new Date(),
-    });
+  //   await createTransaction({
+  //     title,
+  //     value,
+  //     category,
+  //     type,
+  //     created_at: new Date(),
+  //   });
     
-    setTitle('');
-    setValue(0);
-    setType('income');
-    setCategory('');
-    onRequestClose();
-  }
+  //   setTitle('');
+  //   setValue(0);
+  //   setType('income');
+  //   setCategory('');
+  //   onRequestClose();
+  // }
   
   return (
     <Modal 
@@ -53,7 +53,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
         <img src={closeImg} alt="Fechar Modal" />
       </button>
 
-      <Container onSubmit={handleCreateNewTransaction}>
+      <Container>
         <h2>Cadastro de transação</h2>
 
         <input

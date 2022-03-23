@@ -1,10 +1,10 @@
-import { Transaction, useTransactions } from '../../hooks/useTransactions';
+import { Statements, useStatements } from '../../hooks/useStatements';
 import formatValue from '../../utils/formatValue';
 
 import { Container } from "./styles";
 
 export function TransactionsTable() {
-  const { transactions } = useTransactions();
+  const { statements } = useStatements();
 
   return (
     <Container>
@@ -19,8 +19,8 @@ export function TransactionsTable() {
         </thead>
 
         <tbody>
-          {transactions.map((transaction: Transaction) => (
-            <tr key={transaction.id}>
+         {/* {statements.map((statement: Statements) => (
+            <tr key={statement.statement}>
               <td>{transaction.title}</td>
               <td className={transaction.type}>
                 {formatValue(transaction.value)}
@@ -32,7 +32,7 @@ export function TransactionsTable() {
                 )}  
               </td>
             </tr>
-          ))}
+                ))} */}
         </tbody>
       </table>
     </Container>
