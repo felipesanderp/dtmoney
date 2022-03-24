@@ -1,14 +1,14 @@
-//import { useTransactions } from '../../hooks/useTransactions';
+import { useStatements } from '../../hooks/useStatements';
 
 import incomeImg from '../../assets/income.svg'
 import outcomeImg from '../../assets/outcome.svg'
 import totalImg from '../../assets/total.svg'
 
 import { Container } from "./styles";
-import formatValue from '../../utils/formatValue';
+//import formatValue from '../../utils/formatValue';
 
 export function Summary() {
-  //const { transactions } = useTransactions();
+  const { balance } = useStatements();
 
   // const summary = transactions.reduce((acc, transaction) => {
   //   if (transaction.type === 'income') {
@@ -34,7 +34,7 @@ export function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          0
+          {balance}
         </strong>
       </div>
       <div>

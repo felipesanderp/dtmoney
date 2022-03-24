@@ -1,16 +1,15 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import { api } from '../services/api';
+export interface Statement {
+  id: string,
+  amount: number,
+  description: string,
+  type: string,
+  created_at: Date,
+}
 
-export interface Statements {
-  statement: [
-    {
-      id: string,
-      amount: number,
-      description: string,
-      type: string,
-      created_at: Date,
-    }
-  ],
+interface StatementState {
+  statement: Statement[];
   balance: number;
 }
 
@@ -19,7 +18,8 @@ interface StatementProviderProps {
 }
 
 interface StatementsContextData {
-  statements: Statements[];
+  statements: Statement[];
+  balance: number;
 }
 
 const StatementsContext = createContext<StatementsContextData>(
@@ -27,20 +27,28 @@ const StatementsContext = createContext<StatementsContextData>(
   );
 
 export function StatementProvider({ children }: StatementProviderProps) {
-  const [statements, setStatements] = useState<Statements[]>([]);
+  const [statements, setStatements] = useState<Statement[]>({} as Statement[]);
+  const [balance, setBalance] = useState<number>(0);
 
   useEffect(() => {
     async function loadStatements(): Promise<void> {
-      const response = await api.get('/statements/balance');
+      const response = await api.get<StatementState>('/statements/balance');
 
-      console.log(response.data.statement);
+      //const [ statement, balance ] = response.data;
+
+      const statementsFormatted = response.data.statement.map((statement: Statement) => ({
+        ...statement,
+      }))
+
+      setStatements(statementsFormatted);
+      setBalance(response.data.balance);
     }
-
+    
     loadStatements();
-  }, [statements]);
+  }, []);
 
   return (
-    <StatementsContext.Provider value={{ statements }}>
+    <StatementsContext.Provider value={{ statements: statements, balance }}>
       {children}
     </StatementsContext.Provider>
   )
