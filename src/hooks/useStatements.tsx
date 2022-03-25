@@ -45,7 +45,7 @@ export function StatementProvider({ children }: StatementProviderProps) {
     }
     
     loadStatements();
-  }, []);
+  }, [statements]);
 
   return (
     <StatementsContext.Provider value={{ statements: statements, balance }}>

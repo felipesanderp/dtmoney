@@ -5,26 +5,23 @@ import outcomeImg from '../../assets/outcome.svg'
 import totalImg from '../../assets/total.svg'
 
 import { Container } from "./styles";
-//import formatValue from '../../utils/formatValue';
+import formatValue from '../../utils/formatValue';
 
 export function Summary() {
-  const { balance } = useStatements();
+  const { statements, balance } = useStatements();
 
-  // const summary = transactions.reduce((acc, transaction) => {
-  //   if (transaction.type === 'income') {
-  //     acc.incomes += Number(transaction.value);
-  //     acc.total += Number(transaction.value);
-  //   } else {
-  //     acc.outcomes += Number(transaction.value);
-  //     acc.total -= Number(transaction.value);
-  //   }
+  const summary = statements.reduce((acc, transaction) => {
+    if (transaction.type === 'deposit') {
+      acc.deposits += transaction.amount;
+    } else {
+      acc.withdraws += transaction.amount;
+    }
 
-  //   return acc;
-  // }, {
-  //   incomes: 0,
-  //   outcomes: 0,
-  //   total: 0
-  // })
+    return acc;
+  }, {
+    deposits: 0,
+    withdraws: 0,
+  })
 
   return (
     <Container>
@@ -34,7 +31,7 @@ export function Summary() {
           <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>
-          {balance}
+          {formatValue(summary.deposits)}
         </strong>
       </div>
       <div>
@@ -43,7 +40,7 @@ export function Summary() {
           <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong className="withdraw">
-          0
+          {formatValue(summary.withdraws)}
         </strong>
       </div>
       <div className="highlight-background">
@@ -52,7 +49,7 @@ export function Summary() {
           <img src={totalImg} alt="Total" />
         </header>
         <strong>
-          0
+          {formatValue(balance)}
         </strong>
       </div>
     </Container>
