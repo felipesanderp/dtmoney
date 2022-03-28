@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { useAuth } from './useAuth';
 import { api } from '../services/api';
 export interface Statement {
   id?: string,
@@ -31,20 +32,24 @@ export function StatementProvider({ children }: StatementProviderProps) {
   const [statements, setStatements] = useState<Statement[]>([]);
   const [balance, setBalance] = useState<number>(0);
 
+  const { user } = useAuth();
+
   useEffect(() => {
     async function loadStatements(): Promise<void> {
-      const response = await api.get<StatementState>('/statements/balance');
+      if (user) {
+        const response = await api.get<StatementState>('/statements/balance');
 
-      const statementsFormatted = response.data.statement.map((statement: Statement) => ({
-        ...statement,
-      }))
+        const statementsFormatted = response.data.statement.map((statement: Statement) => ({
+          ...statement,
+        }))
 
-      setStatements(statementsFormatted);
-      setBalance(response.data.balance);
+        setStatements(statementsFormatted);
+        setBalance(response.data.balance);
+      }
     }
     
     loadStatements();
-  }, [statements]);
+  }, [statements, user]);
 
   async function createStatement({ description, type, amount }: Statement): Promise<void> {
     await api.post(`/statements/${type}`, {
