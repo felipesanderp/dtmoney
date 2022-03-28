@@ -28,7 +28,7 @@ const StatementsContext = createContext<StatementsContextData>(
   );
 
 export function StatementProvider({ children }: StatementProviderProps) {
-  const [statements, setStatements] = useState<Statement[]>({} as Statement[]);
+  const [statements, setStatements] = useState<Statement[]>([]);
   const [balance, setBalance] = useState<number>(0);
 
   useEffect(() => {
