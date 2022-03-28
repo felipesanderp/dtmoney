@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import Modal from 'react-modal'
-//import { useTransactions } from '../../hooks/useTransactions';
+import { useStatements } from '../../hooks/useStatements';
 
 import closeImg from '../../assets/close.svg';
 import incomeImg from '../../assets/income.svg';
@@ -13,29 +13,26 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
-  //const { createTransaction } = useTransactions();
+  const { createStatement } = useStatements();
 
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
   const [type, setType] = useState('deposit');
 
-  // async function handleCreateNewTransaction(event: FormEvent) {
-  //   event.preventDefault();
+  async function handleCreateNewStatement(event: FormEvent) {
+    event.preventDefault();
 
-  //   await createTransaction({
-  //     title,
-  //     value,
-  //     category,
-  //     type,
-  //     created_at: new Date(),
-  //   });
+    await createStatement({
+      description,
+      amount,
+      type,
+    });
     
-  //   setTitle('');
-  //   setValue(0);
-  //   setType('income');
-  //   setCategory('');
-  //   onRequestClose();
-  // }
+    setDescription('');
+    setAmount(0);
+    setType('deposit');
+    onRequestClose();
+  }
   
   return (
     <Modal 
@@ -90,7 +87,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
           </RadioBox>
         </TransacitionTypeContainer>
 
-        <button type="submit">
+        <button type="submit" onClick={handleCreateNewStatement}>
           Cadastrar
         </button>
       </Container>

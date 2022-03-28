@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import { api } from '../services/api';
 export interface Statement {
-  id: string,
+  id?: string,
   amount: number,
   description: string,
   type: string,
-  created_at: Date,
+  created_at?: Date,
 }
 
 interface StatementState {
@@ -20,6 +20,7 @@ interface StatementProviderProps {
 interface StatementsContextData {
   statements: Statement[];
   balance: number;
+  createStatement(data: Statement): Promise<void>;
 }
 
 const StatementsContext = createContext<StatementsContextData>(
@@ -34,8 +35,6 @@ export function StatementProvider({ children }: StatementProviderProps) {
     async function loadStatements(): Promise<void> {
       const response = await api.get<StatementState>('/statements/balance');
 
-      //const [ statement, balance ] = response.data;
-
       const statementsFormatted = response.data.statement.map((statement: Statement) => ({
         ...statement,
       }))
@@ -47,8 +46,15 @@ export function StatementProvider({ children }: StatementProviderProps) {
     loadStatements();
   }, [statements]);
 
+  async function createStatement({ description, type, amount }: Statement): Promise<void> {
+    await api.post(`/statements/${type}`, {
+      description,
+      amount,
+    });
+  }
+
   return (
-    <StatementsContext.Provider value={{ statements: statements, balance }}>
+    <StatementsContext.Provider value={{ statements: statements, balance, createStatement }}>
       {children}
     </StatementsContext.Provider>
   )
