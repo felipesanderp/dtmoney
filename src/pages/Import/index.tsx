@@ -31,9 +31,10 @@ export function Import() {
     data.append('file', file.file, file.name);
 
     try {
-      await api.post('/transactions/import', data);
+      await api.post('/statements/import', data);
 
-      history('/');
+      history('/dashboard');
+      window.location.reload();
 
     } catch (err: any) {
       console.log(err.response.error);
