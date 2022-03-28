@@ -25,7 +25,7 @@ export function TransactionsTable() {
               <td className={statement.type}>
                 {formatValue(statement.amount)}
               </td>
-              <td>{statement.type}</td>
+              <td>{statement.type && statement.type === 'deposit' ? 'ENTRADA' : 'SAÍDA'}</td>
               <td>
                 {new Date(statement.created_at).toLocaleDateString(
                   'pt-BR',
