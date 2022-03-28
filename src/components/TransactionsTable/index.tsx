@@ -8,7 +8,8 @@ export function TransactionsTable() {
 
   return (
     <Container>
-      <table>
+      { statements.length > 0 ? (
+        <table>
         <thead>
           <tr>
             <th>Descrição</th>
@@ -35,6 +36,7 @@ export function TransactionsTable() {
           ))}
         </tbody>
       </table>
+      ) : <h1>Sem</h1>}
     </Container>
   )
 }
