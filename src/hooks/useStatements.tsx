@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
 import { useAuth } from './useAuth';
 import { api } from '../services/api';
+import { toast } from 'react-toastify';
 export interface Statement {
   id?: string,
   amount: number,
@@ -52,10 +53,14 @@ export function StatementProvider({ children }: StatementProviderProps) {
   }, [statements, user]);
 
   async function createStatement({ description, type, amount }: Statement): Promise<void> {
-    await api.post(`/statements/${type}`, {
-      description,
-      amount,
-    });
+    try {
+      await api.post(`/statements/${type}`, {
+        description,
+        amount,
+      });
+    } catch (err) {
+      toast("Fundos insuficientes!");
+    }
   }
 
   return (

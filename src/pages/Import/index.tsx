@@ -10,6 +10,7 @@ import alert from '../../assets/alert.svg';
 
 import { Container, Title, ImportFileContainer, Footer } from './styles';
 import { Header } from '../../components/Header';
+import { toast } from 'react-toastify';
 interface FileProps {
   file: File;
   name: string;
@@ -37,7 +38,7 @@ export function Import() {
       window.location.reload();
 
     } catch (err: any) {
-      console.log(err.response.error);
+      toast("Erro na importação!");
     }
   }
 
