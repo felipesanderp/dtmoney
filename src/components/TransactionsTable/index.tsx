@@ -1,5 +1,6 @@
 import { useStatements, Statement } from '../../hooks/useStatements';
 import formatValue from "../../utils/formatValue";
+import { NoStatementPage } from '../NoStatementPage';
 
 import { Container } from "./styles";
 
@@ -10,33 +11,35 @@ export function TransactionsTable() {
     <Container>
       { statements.length > 0 ? (
         <table>
-        <thead>
-          <tr>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Tipo</th>
-            <th>Data</th>
-          </tr>
-        </thead>
-
-        <tbody>
-         {statements.map((statement: Statement) => (
-            <tr key={statement.id}>
-              <td>{statement.description}</td>
-              <td className={statement.type}>
-                {formatValue(statement.amount)}
-              </td>
-              <td>{statement.type && statement.type === 'deposit' ? 'ENTRADA' : 'SAÍDA'}</td>
-              <td>
-                {statement.created_at && new Date(statement.created_at).toLocaleDateString(
-                  'pt-BR',
-                )}  
-              </td>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Tipo</th>
+              <th>Data</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-      ) : <h1>Sem</h1>}
+          </thead>
+
+          <tbody>
+          {statements.map((statement: Statement) => (
+              <tr key={statement.id}>
+                <td>{statement.description}</td>
+                <td className={statement.type}>
+                  {formatValue(statement.amount)}
+                </td>
+                <td>{statement.type && statement.type === 'deposit' ? 'ENTRADA' : 'SAÍDA'}</td>
+                <td>
+                  {statement.created_at && new Date(statement.created_at).toLocaleDateString(
+                    'pt-BR',
+                  )}  
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        ) 
+        : <NoStatementPage />
+      }
     </Container>
   )
 }
