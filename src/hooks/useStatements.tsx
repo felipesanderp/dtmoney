@@ -23,6 +23,7 @@ interface StatementsContextData {
   statements: Statement[];
   balance: number;
   createStatement(data: Statement): Promise<void>;
+  deleteStatement(id: string | undefined): Promise<void>;
 }
 
 const StatementsContext = createContext<StatementsContextData>(
@@ -59,12 +60,22 @@ export function StatementProvider({ children }: StatementProviderProps) {
         amount,
       });
     } catch (err) {
-      toast("Fundos insuficientes!");
+      toast.error("Fundos insuficientes!");
+    }
+  }
+  
+  async function deleteStatement(id: string): Promise<void> {
+    try {
+      await api.delete(`/statements/${id}`);
+
+      toast.success("Transação removida com sucesso!");
+    } catch {
+      toast.error("Erro ao remover!")
     }
   }
 
   return (
-    <StatementsContext.Provider value={{ statements: statements, balance, createStatement }}>
+    <StatementsContext.Provider value={{ statements: statements, balance, createStatement, deleteStatement }}>
       {children}
     </StatementsContext.Provider>
   )
