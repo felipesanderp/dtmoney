@@ -70,6 +70,9 @@ export function Import() {
               Enviar
             </button>
           </Footer>
+          <p>
+            Depósitos e Retiradas devem estar em arquivos separados
+          </p>
         </ImportFileContainer>
       </Container>
     </>
