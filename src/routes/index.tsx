@@ -4,6 +4,7 @@ import { SignIn } from '../pages/SignIn';
 import { Dashboard } from '../pages/Dashboard';
 import { Import } from '../pages/Import';
 import { useAuth } from '../hooks/useAuth';
+import { SignUp } from '../pages/SignUp';
 
 export function Routes() {
  
@@ -14,6 +15,7 @@ export function Routes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/import" element={<Import />} />
       </Route>
+      <Route path="/signup" element={<SignUp />} />
     </RoutesReact>
   )
 }
