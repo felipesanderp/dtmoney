@@ -6,6 +6,26 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  a {
+    color: var(--blue);
+    margin-top: 2rem;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+
+    transition: filter 2s;
+
+    &:hover {
+      filter: brightness(0.9);
+      text-decoration: underline;
+    }
+    svg {
+      margin-right: 1rem;
+    }
+  }
 `;
 
 export const Content = styled.div`

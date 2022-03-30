@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { FiLogIn } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 import { Input } from '../../components/Input';
@@ -49,6 +50,11 @@ export function SignIn() {
           <button type="submit">Entrar</button>
         </form>
       </Content>
+
+      <Link to="/signup">
+        <FiLogIn />
+        Criar Conta
+      </Link>
     </Container>
   )
 }
