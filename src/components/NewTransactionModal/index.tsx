@@ -7,6 +7,7 @@ import incomeImg from '../../assets/income.svg';
 import outcomeImg from '../../assets/outcome.svg';
 
 import { Container, TransacitionTypeContainer, RadioBox } from './styles'
+import { toast } from 'react-toastify';
 interface NewTransactionModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -27,6 +28,8 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
       amount,
       type,
     });
+
+    toast.success("Transação adicionada!")
     
     setDescription('');
     setAmount(0);
