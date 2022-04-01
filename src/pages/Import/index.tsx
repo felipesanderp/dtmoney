@@ -72,7 +72,7 @@ export function Import() {
             </button>
           </Footer>
           <p>
-            Depósitos e Retiradas devem estar em arquivos separados
+            Somente depósitos!
           </p>
         </ImportFileContainer>
       </Container>
