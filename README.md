@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-  <img src="/src/assets/dtmoney-gif.gif" alt="animated" />
+  <img src="/src/assets/dtmoneygif.gif" alt="animated" />
 </p>  
 
 <p align="center">
