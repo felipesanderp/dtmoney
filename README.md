@@ -50,10 +50,12 @@ Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocke
 
 ## :information_source: Como usar
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e ter clonado a [API do projeto](https://github.com/felipesanderp/dtmoney-api).
 Além disto é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/)
 
 ```bash
+# Após ter clonado e configurado a API do projeto, siga os passos abaixo:
+
 # Clone este repositório
 $ git clone https://github.com/felipesanderp/dtmoney.git
 
