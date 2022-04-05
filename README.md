@@ -41,6 +41,7 @@ Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocke
 - [ReactJS](https://reactjs.org/)
 - [react-modal](https://github.com/reactjs/react-modal)
 - [axios](https://github.com/axios/axios)
+- [react-dropzone](https://react-dropzone.js.org/)
 - [React Toastfy](https://fkhadra.github.io/react-toastify/introduction)
 - [csv-parse](https://csv.js.org/parse/)
 - [styled-components](https://styled-components.com/)
