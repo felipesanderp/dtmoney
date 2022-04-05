@@ -39,9 +39,10 @@
 Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocketseat.com.br/ignite) da Rocketseat, com as seguintes tecnologias:
 
 - [ReactJS](https://reactjs.org/)
-- [mirajejs](https://miragejs.com/)
 - [react-modal](https://github.com/reactjs/react-modal)
 - [axios](https://github.com/axios/axios)
+- [React Toastfy](https://fkhadra.github.io/react-toastify/introduction)
+- [csv-parse](https://csv.js.org/parse/)
 - [styled-components](https://styled-components.com/)
 - [polished-js](https://polished.js.org/)
 - [VSCode](https://code.visualstudio.com/)
