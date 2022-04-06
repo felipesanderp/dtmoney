@@ -45,6 +45,7 @@ Esse projeto foi desenvolvido como parte do curso [**Ignite**](https://www.rocke
 - [React Toastfy](https://fkhadra.github.io/react-toastify/introduction)
 - [csv-parse](https://csv.js.org/parse/)
 - [styled-components](https://styled-components.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 - [polished-js](https://polished.js.org/)
 - [VSCode](https://code.visualstudio.com/)
 
